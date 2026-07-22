@@ -118,20 +118,57 @@ The dashboard includes multiple visualizations such as:
 ```text
 FIFA-WorldCup-2026-Analytics/
 │
-├── frontend/          # React + Tailwind Dashboard
-├── backend/           # Express.js REST API
-├── analytics/         # Python Analytics Engine
+├── frontend/                      # React + Tailwind Dashboard
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js
+│
+├── backend/                       # Express.js REST API
+│   ├── routes/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── server.js
+│   └── package.json
+│
+├── analytics/                     # Python Analytics Engine
 │   ├── data/
 │   │   ├── raw/
 │   │   └── processed/
+│   │
 │   ├── notebooks/
+│   │   ├── 01_Data_Loading.ipynb
+│   │   ├── 02_Data_Cleaning.ipynb
+│   │   ├── 03_Exploratory_Data_Analysis.ipynb
+│   │   ├── 04_Statistical_Analysis.ipynb
+│   │   ├── 05_Data_Visualization.ipynb
+│   │   └── 06_Insights.ipynb
+│   │
 │   ├── src/
-│   └── charts/
+│   │   ├── loader.py
+│   │   ├── cleaning.py
+│   │   ├── preprocessing.py
+│   │   ├── analysis.py
+│   │   ├── statistics.py
+│   │   ├── visualization.py
+│   │   ├── insights.py
+│   │   ├── api.py
+│   │   └── utils.py
+│   │
+│   ├── charts/
+│   │
+│   ├── requirements.txt
+│   └── app.py
 │
-├── screenshots/
-├── README.md
+├── .gitignore
 ├── LICENSE
-└── .gitignore
+└── README.md
 ```
 
 ---
