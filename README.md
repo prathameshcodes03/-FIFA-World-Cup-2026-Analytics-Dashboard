@@ -1,248 +1,306 @@
-# FIFA World Cup 2026 Analytics Dashboard
+FIFA World Cup 2026 Analytics Dashboard
 
-An interactive analytics dashboard built using **Python**, **Pandas**, **NumPy**, **Matplotlib**, and **Streamlit** to analyze the **FIFA World Cup 2026** tournament.
+A full-stack analytics dashboard built using React, Node.js, Express.js, Python, Pandas, NumPy, Matplotlib, and Tailwind CSS to analyze the FIFA World Cup 2026 tournament.
 
-The project transforms raw match data into meaningful insights through data cleaning, statistical analysis, and interactive visualizations. It provides an in-depth exploration of tournament matches, team performances, standings, host cities, stadiums, and tournament trends.
+The project combines modern web development with Python-based data analytics to transform raw tournament data into meaningful insights. It features an interactive dashboard for exploring match results, team performances, tournament statistics, attendance trends, and host city analysis.
 
----
+⸻
 
-# Project Overview
+Project Overview
 
-The FIFA World Cup 2026 introduces a new tournament format featuring:
+The FIFA World Cup 2026 marks the beginning of a new tournament format featuring:
 
-- Three host nations
-- 16 host cities
-- 48 participating teams
-- 104 scheduled matches
-- Expanded tournament format
+* 48 Participating Teams
+* 3 Host Nations
+* 16 Host Cities
+* 104 Scheduled Matches
+* Expanded Tournament Format
 
-This project analyzes the available tournament dataset using Python's data analysis ecosystem to uncover meaningful insights and visualize tournament statistics.
+The project performs data cleaning, exploratory data analysis (EDA), statistical analysis, and visualization using Python, while providing an interactive user experience through a modern React-based dashboard.
 
----
+⸻
 
-# Features
+Features
 
-## Dashboard
-- Tournament Overview
-- Overall Statistics
-- Total Matches
-- Total Goals
-- Tournament Summary
+Dashboard
 
----
+* Tournament Overview
+* Overall Tournament Statistics
+* Total Matches
+* Total Goals
+* Tournament Summary
+* Quick Insights
 
-## Match Analysis
-- Match Schedule
-- Match Results
-- Goals Scored
-- Highest Scoring Matches
-- Biggest Victories
-- Match Outcome Distribution
+⸻
 
----
+Match Analysis
 
-## Team Analysis
-- Wins
-- Draws
-- Losses
-- Goals Scored
-- Goals Conceded
-- Goal Difference
-- Win Percentage
-- Team Comparison
+* Match Schedule
+* Match Results
+* Goals Scored
+* Highest Scoring Matches
+* Biggest Victories
+* Match Outcome Distribution
 
----
+⸻
 
-## Tournament Statistics
-- Goals by Tournament Stage
-- Matches by Stage
-- Goal Distribution
-- Attendance Analysis
-- Average Goals per Match
+Team Analysis
 
----
+* Wins
+* Draws
+* Losses
+* Goals Scored
+* Goals Conceded
+* Goal Difference
+* Win Percentage
+* Team Comparison
 
-## Stadium & Host City Analysis
-- Stadium Information
-- Host Cities
-- Matches Hosted
-- Attendance by Stadium
-- Attendance by City
+⸻
 
----
+Tournament Statistics
 
-## Automated Insights
-The dashboard automatically generates insights such as:
+* Goals by Tournament Stage
+* Matches by Stage
+* Average Goals per Match
+* Goal Distribution
+* Attendance Analysis
 
-- Highest Scoring Team
-- Best Defensive Team
-- Most Entertaining Match
-- Highest Attendance Match
-- Lowest Attendance Match
-- Tournament Statistics Summary
+⸻
 
----
+Stadium & Host City Analysis
 
-# Visualizations
+* Stadium Information
+* Host Cities
+* Matches Hosted
+* Attendance by Stadium
+* Attendance by City
 
-The dashboard includes multiple visualizations such as:
+⸻
 
-- Bar Charts
-- Line Charts
-- Pie Charts
-- Histograms
-- Scatter Plots
-- Box Plots
-- Statistical Tables
+Automated Insights
 
----
+The analytics engine automatically generates tournament insights including:
 
-# Tech Stack
+* Highest Scoring Team
+* Best Defensive Team
+* Most Entertaining Match
+* Highest Attendance Match
+* Lowest Attendance Match
+* Tournament Summary Statistics
 
-| Technology | Purpose |
-|------------|---------|
-| Python | Programming Language |
-| Pandas | Data Cleaning & Analysis |
-| NumPy | Numerical Computations |
-| Matplotlib | Data Visualization |
-| Streamlit | Interactive Dashboard |
+⸻
 
----
+Data Analysis
 
-# Project Structure
+The backend performs:
 
-```text
+* Data Cleaning
+* Data Preprocessing
+* Exploratory Data Analysis (EDA)
+* Statistical Analysis
+* Trend Analysis
+* Automated Insight Generation
+* Data Visualization
+
+⸻
+
+Visualizations
+
+The dashboard includes various visualizations such as:
+
+* Bar Charts
+* Horizontal Bar Charts
+* Line Charts
+* Pie Charts
+* Histograms
+* Scatter Plots
+* Box Plots
+* Statistical Tables
+
+⸻
+
+Tech Stack
+
+Frontend
+
+* React.js
+* Tailwind CSS
+* Axios
+* Recharts
+
+Backend
+
+* Node.js
+* Express.js
+
+Analytics Engine
+
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+
+⸻
+
+Project Structure
+
 FIFA-WorldCup-2026-Analytics/
-
-├── app.py
-├── requirements.txt
+│
+├── frontend/
+│
+│   ├── public/
+│   │
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── StatCard.jsx
+│   │   │   ├── ChartCard.jsx
+│   │   │   └── Loader.jsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Matches.jsx
+│   │   │   ├── Teams.jsx
+│   │   │   ├── Stadiums.jsx
+│   │   │   ├── Trends.jsx
+│   │   │   └── Insights.jsx
+│   │   │
+│   │   ├── services/
+│   │   │   └── api.js
+│   │   │
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── package.json
+│   └── vite.config.js
+│
+├── backend/
+│
+│   ├── server.js
+│   ├── package.json
+│   │
+│   ├── routes/
+│   ├── controllers/
+│   └── api/
+│
+├── analytics/
+│
+│   ├── app.py
+│   ├── requirements.txt
+│   │
+│   ├── data/
+│   │   ├── raw/
+│   │   └── processed/
+│   │
+│   ├── notebooks/
+│   │
+│   ├── src/
+│   │   ├── loader.py
+│   │   ├── preprocessing.py
+│   │   ├── analysis.py
+│   │   ├── statistics.py
+│   │   ├── visualization.py
+│   │   ├── insights.py
+│   │   └── utils.py
+│   │
+│   └── charts/
+│
+├── screenshots/
+│
 ├── README.md
-├── .gitignore
-│
-├── data/
-│   ├── raw/
-│   └── processed/
-│
-├── src/
-│   ├── loader.py
-│   ├── preprocessing.py
-│   ├── analysis.py
-│   ├── visualization.py
-│   ├── statistics.py
-│   └── utils.py
-│
-├── pages/
-│   ├── Home.py
-│   ├── Matches.py
-│   ├── Teams.py
-│   ├── Tournament.py
-│   ├── Stadiums.py
-│   ├── Trends.py
-│   └── Insights.py
-│
-├── assets/
-├── charts/
-├── notebooks/
-└── screenshots/
-```
+├── LICENSE
+└── .gitignore
 
----
+⸻
 
-# Dataset
+Dataset
 
-The dashboard is built using FIFA World Cup 2026 match datasets containing information such as:
+The project analyzes FIFA World Cup 2026 tournament datasets containing:
 
-- Match Schedule
-- Match Results
-- Teams
-- Tournament Stages
-- Stadiums
-- Host Cities
-- Referees
-- Attendance
-- Goals
-- Match Statistics
+* Match Schedule
+* Match Results
+* Teams
+* Tournament Stages
+* Stadiums
+* Host Cities
+* Referees
+* Attendance
+* Goals
+* Match Statistics
 
-> **Note:** This project analyzes the available match dataset. Player-level analysis can be added when a complete player statistics dataset becomes available.
+The dashboard analyzes the available tournament data. Additional player-level analytics can be incorporated when a complete player statistics dataset is available.
 
----
+⸻
 
-# Installation
+Installation
 
 Clone the repository
 
-```bash
 git clone https://github.com/your-username/FIFA-WorldCup-2026-Analytics.git
-```
 
-Navigate to the project directory
+Navigate to the project
 
-```bash
 cd FIFA-WorldCup-2026-Analytics
-```
 
-Install the required dependencies
+Install frontend dependencies
 
-```bash
+cd frontend
+npm install
+
+Install backend dependencies
+
+cd ../backend
+npm install
+
+Install Python dependencies
+
+cd ../analytics
 pip install -r requirements.txt
-```
 
-Run the Streamlit application
+Run the React application
 
-```bash
-streamlit run app.py
-```
+npm run dev
 
----
+Run the Node.js server
 
-# Project Objectives
+node server.js
 
-- Perform real-world sports data analysis
-- Practice data cleaning using Pandas
-- Analyze tournament match statistics
-- Build meaningful visualizations using Matplotlib
-- Generate statistical insights using NumPy
-- Develop an interactive Streamlit dashboard
-- Organize a production-style Python project
+Run the Python analytics service
 
----
+python app.py
 
-# Future Improvements
+⸻
 
-- Live Match Updates
-- Interactive Plotly Visualizations
-- Team Comparison Dashboard
-- Predictive Match Analytics
-- Player Statistics Dashboard
-- Machine Learning Match Predictions
-- Export Reports (PDF/PNG)
-- Dark and Light Theme
+Future Improvements
 
----
+* Live Match Data Integration
+* Interactive Team Comparison
+* Interactive Player Comparison
+* Tournament Prediction using Machine Learning
+* Export Dashboard Reports
+* Advanced Statistical Analysis
+* Performance Metrics
+* Responsive Mobile Dashboard
 
-# Screenshots
+⸻
 
-Screenshots will be added after project completion.
-
----
-
-# Learning Outcomes
+Learning Outcomes
 
 This project demonstrates practical experience in:
 
-- Data Cleaning
-- Exploratory Data Analysis (EDA)
-- Statistical Analysis
-- Data Visualization
-- Dashboard Development
-- Streamlit
-- Python Project Organization
-- Git & GitHub Workflow
+* Python Programming
+* Pandas
+* NumPy
+* Matplotlib
+* Data Cleaning
+* Exploratory Data Analysis (EDA)
+* Statistical Analysis
+* REST API Development
+* React.js
+* Express.js
+* Full Stack Development
+* Dashboard Design
+* Git & GitHub Workflow
 
----
-
-# Author
-
-**Prathamesh Palekar**
-
-If you found this project useful, consider giving it a star on GitHub.
