@@ -273,37 +273,9 @@ python app.py
 
 ⸻
 
-Future Improvements
 
-* Live Match Data Integration
-* Interactive Team Comparison
-* Interactive Player Comparison
-* Tournament Prediction using Machine Learning
-* Export Dashboard Reports
-* Advanced Statistical Analysis
-* Performance Metrics
-* Responsive Mobile Dashboard
 
-⸻
 
-Learning Outcomes
 
-This project demonstrates practical experience in:
-
-* Python Programming
-* Pandas
-* NumPy
-* Matplotlib
-* Data Cleaning
-* Exploratory Data Analysis (EDA)
-* Statistical Analysis
-* REST API Development
-* React.js
-* Express.js
-* Full Stack Development
-* Dashboard Design
-* Git & GitHub Workflow
-
-⸻
 
 
