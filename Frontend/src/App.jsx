@@ -1,13 +1,17 @@
-import { useState } from 'react'
-import './App.css'
-import {Route,Routes} from 'react-router-dom'
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
 
-export default App
+    return (
+
+        <div className="bg-[#0d1117] min-h-screen">
+
+            <Dashboard />
+
+        </div>
+
+    );
+
+};
+
+export default App;

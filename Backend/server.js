@@ -15,12 +15,11 @@ app.get("/", async (req, res) => {
 
         const data = await readCSV();
 
+        console.log(Object.keys(data[0]));   // 👈 Add this line
+
         res.json({
-
             totalMatches: data.length,
-
             firstMatch: data[0]
-
         });
 
     } catch (error) {
@@ -30,7 +29,6 @@ app.get("/", async (req, res) => {
     }
 
 });
-
 
 
 

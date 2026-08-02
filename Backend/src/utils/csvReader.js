@@ -8,9 +8,12 @@ const readCSV = () => {
         const results = [];
 
         const filePath = path.join(
-    __dirname,
-    "../../../analytics/matches_cleaned.csv"
-);
+            __dirname,
+            "../../../analytics/matches_cleaned.csv"
+        );
+
+        console.log("CSV Path:", filePath);
+        console.log("File Exists:", fs.existsSync(filePath));
 
         fs.createReadStream(filePath)
             .pipe(csv())
@@ -18,9 +21,11 @@ const readCSV = () => {
                 results.push(row);
             })
             .on("end", () => {
+                console.log("Rows Loaded:", results.length);
                 resolve(results);
             })
             .on("error", (error) => {
+                console.error("CSV Error:", error);
                 reject(error);
             });
 
