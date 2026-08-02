@@ -1,96 +1,50 @@
 # FIFA World Cup 2026 Analytics Dashboard
 
-A full-stack analytics dashboard built using **React**, **Node.js**, **Express.js**, **Python**, **Pandas**, **NumPy**, **Matplotlib**, and **Tailwind CSS** to analyze the **FIFA World Cup 2026** tournament.
+A full-stack analytics dashboard built using **React**, **Node.js**, **Express.js**, **Python**, **Pandas**, **NumPy**, **Matplotlib**, **Recharts**, and **Tailwind CSS** to analyze the **FIFA World Cup 2026** tournament.
 
-The project combines modern web development with Python-based data analytics to transform raw tournament data into meaningful insights. Users can explore match results, team performances, tournament statistics, attendance trends, host cities, and stadium information through an interactive dashboard.
-
----
-
-# Project Overview
-
-The FIFA World Cup 2026 introduces a new tournament format featuring:
-
-- 48 Participating Teams
-- 3 Host Nations
-- 16 Host Cities
-- 104 Scheduled Matches
-- Expanded Tournament Format
-
-This project performs data cleaning, exploratory data analysis (EDA), statistical analysis, and visualization using Python while providing an interactive React-based dashboard for data exploration.
+The project combines Python-based data preprocessing with a modern React dashboard, allowing users to explore tournament statistics, match analytics, and team performance through interactive visualizations.
 
 ---
 
-# Features
+## Features
 
-## Dashboard
+### Dashboard Overview
 
-- Tournament Overview
 - Total Matches
 - Total Goals
-- Tournament Statistics
-- Quick Insights
-
-## Match Analysis
-
-- Match Schedule
-- Match Results
-- Goals Scored
-- Highest Scoring Matches
-- Biggest Victories
-- Match Outcome Distribution
-
-## Team Analysis
-
-- Wins, Draws & Losses
-- Goals Scored
-- Goals Conceded
-- Goal Difference
-- Win Percentage
-- Team Comparison
-
-## Tournament Statistics
-
-- Goals by Tournament Stage
-- Matches by Stage
+- Total Attendance
 - Average Goals per Match
-- Goal Distribution
-- Attendance Analysis
 
-## Stadium & Host City Analysis
+### Tournament Analytics
 
-- Stadium Information
-- Host Cities
-- Matches Hosted
-- Attendance by Stadium
-- Attendance by City
+- Goals by Round
+- Match Result Distribution
+- Home vs Away Goals
 
-## Automated Insights
+### Team Analytics
 
-- Highest Scoring Team
-- Best Defensive Team
-- Most Entertaining Match
-- Highest Attendance Match
-- Lowest Attendance Match
-- Tournament Summary Statistics
+- Top Scoring Teams
+- Most Wins
+- Most Losses
+- Goal Difference
+- Average Possession
 
----
+### Match Analytics
 
-# Visualizations
-
-The dashboard includes multiple visualizations such as:
-
-- Bar Charts
-- Horizontal Bar Charts
-- Line Charts
-- Pie Charts
-- Histograms
-- Scatter Plots
-- Box Plots
-- Statistical Tables
+- Matches by Round
+- Attendance by Round
+- Top Attendance Matches
+- Top Goal Matches
 
 ---
 
-# Tech Stack
+## Dashboard Preview
+
+> Dashboard screenshots will be added here.
+
+---
+
+## Tech Stack
 
 ### Frontend
 
@@ -98,13 +52,15 @@ The dashboard includes multiple visualizations such as:
 - Tailwind CSS
 - Axios
 - Recharts
+- React Router
 
 ### Backend
 
 - Node.js
 - Express.js
+- REST APIs
 
-### Analytics Engine
+### Data Analytics
 
 - Python
 - Pandas
@@ -113,154 +69,136 @@ The dashboard includes multiple visualizations such as:
 
 ---
 
-# Project Structure
+## Project Architecture
 
 ```text
-FIFA-WorldCup-2026-Analytics/
+FIFA-World-Cup-2026-Analytics-Dashboard
 │
-├── frontend/                      # React + Tailwind Dashboard
-│   ├── public/
-│   ├── src/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── package.json
-│   └── vite.config.js
+├── Frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── charts
+│   │   ├── hooks
+│   │   ├── pages
+│   │   ├── services
+│   │   └── App.jsx
+│   └── package.json
 │
-├── backend/                       # Express.js REST API
-│   ├── routes/
-│   ├── controllers/
-│   ├── middleware/
+├── Backend
+│   ├── src
+│   │   ├── controllers
+│   │   ├── routes
+│   │   ├── utils
+│   │   └── app.js
 │   ├── server.js
 │   └── package.json
 │
-├── analytics/                     # Python Analytics Engine
-│   ├── data/
-│   │   ├── raw/
-│   │   └── processed/
-│   │
-│   ├── notebooks/
-│   │   ├── 01_Data_Loading.ipynb
-│   │   ├── 02_Data_Cleaning.ipynb
-│   │   ├── 03_Exploratory_Data_Analysis.ipynb
-│   │   ├── 04_Statistical_Analysis.ipynb
-│   │   ├── 05_Data_Visualization.ipynb
-│   │   └── 06_Insights.ipynb
-│   │
-│   ├── src/
-│   │   ├── loader.py
-│   │   ├── cleaning.py
-│   │   ├── preprocessing.py
-│   │   ├── analysis.py
-│   │   ├── statistics.py
-│   │   ├── visualization.py
-│   │   ├── insights.py
-│   │   ├── api.py
-│   │   └── utils.py
-│   │
-│   ├── charts/
-│   │
-│   ├── requirements.txt
-│   └── app.py
+├── Analytics
+│   ├── notebooks
+│   ├── charts
+│   └── matches_cleaned.csv
 │
-├── .gitignore
-├── LICENSE
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-# Dataset
+## REST API Endpoints
 
-The project analyzes FIFA World Cup 2026 tournament datasets containing:
+### Statistics
 
-- Match Schedule
-- Match Results
-- Teams
-- Tournament Stages
-- Stadiums
-- Host Cities
-- Referees
-- Attendance
-- Goals
-- Match Statistics
+```
+GET /api/stats/dashboard
+GET /api/stats/goals-round
+GET /api/stats/results
+GET /api/stats/home-away-goals
+GET /api/stats/matches-round
+GET /api/stats/attendance-round
+GET /api/stats/top-attendance
+GET /api/stats/top-goals
+```
 
-> **Note:** The dashboard analyzes the available tournament dataset. Additional player-level analysis can be incorporated when a complete player statistics dataset becomes available.
+### Teams
+
+```
+GET /api/teams
+GET /api/teams/:team
+GET /api/teams/top-scoring
+GET /api/teams/wins
+GET /api/teams/losses
+GET /api/teams/goal-difference
+GET /api/teams/possession
+```
 
 ---
 
-# Installation
+## Dataset
+
+The dashboard analyzes FIFA World Cup 2026 tournament data including:
+
+- Match Results
+- Teams
+- Tournament Rounds
+- Attendance
+- Stadiums
+- Host Cities
+- Referees
+- Goals
+- Match Statistics
+
+The dataset was cleaned and preprocessed using Python before being consumed by the backend APIs.
+
+---
+
+## Installation
 
 Clone the repository
 
 ```bash
-git clone https://github.com/your-username/FIFA-WorldCup-2026-Analytics.git
-cd FIFA-WorldCup-2026-Analytics
+git clone https://github.com/your-username/FIFA-World-Cup-2026-Analytics-Dashboard.git
 ```
 
-Install project dependencies
+### Frontend
 
 ```bash
-# Frontend
-cd frontend
+cd Frontend
 npm install
-
-# Backend
-cd ../backend
-npm install
-
-# Analytics
-cd ../analytics
-pip install -r requirements.txt
+npm run dev
 ```
 
-Start the frontend, backend, and analytics service in separate terminals.
+### Backend
+
+```bash
+cd Backend
+npm install
+npm run dev
+```
 
 ---
 
-# Future Improvements
+## Future Improvements
 
-- Live Match Data Integration
 - Interactive Team Comparison
-- Interactive Player Comparison
-- Tournament Prediction using Machine Learning
-- Export Reports (PDF/PNG)
-- Advanced Statistical Analysis
-- Performance Metrics
-- Responsive Dashboard
+- Search & Filter Matches
 - Dark Mode
+- Export Dashboard Reports
+- Live Match Data Integration
+- Player Statistics Dashboard
+- Predictive Analytics using Machine Learning
 
 ---
 
-# Screenshots
+## Skills Demonstrated
 
-Screenshots and dashboard previews will be added after project completion.
-
----
-
-# Learning Outcomes
-
-This project demonstrates practical experience in:
-
-- Python Programming
-- Data Cleaning
-- Exploratory Data Analysis (EDA)
-- Statistical Analysis
-- Data Visualization
+- Full Stack Development
 - REST API Development
 - React.js
 - Express.js
-- Full-Stack Development
+- Data Cleaning
+- Exploratory Data Analysis (EDA)
+- Data Visualization
 - Dashboard Design
-- Git & GitHub Workflow
+- Git & GitHub
 
 ---
-
-# Author
-
-**Prathamesh Palekar**
-
-If you found this project useful, consider giving it a ⭐ on GitHub.
