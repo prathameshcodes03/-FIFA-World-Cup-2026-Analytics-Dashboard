@@ -4,32 +4,21 @@ import API from "../services/api";
 const useDashboard = () => {
 
     const [dashboard, setDashboard] = useState(null);
-
     const [goalsRound, setGoalsRound] = useState([]);
-
     const [results, setResults] = useState([]);
-
     const [homeAwayGoals, setHomeAwayGoals] = useState([]);
-
     const [topScoring, setTopScoring] = useState([]);
-
     const [wins, setWins] = useState([]);
-
     const [goalDifference, setGoalDifference] = useState([]);
-
     const [possession, setPossession] = useState([]);
-
     const [teamLosses, setTeamLosses] = useState([]);
-
     const [matchesRound, setMatchesRound] = useState([]);
-
     const [attendanceRound, setAttendanceRound] = useState([]);
-
     const [topAttendance, setTopAttendance] = useState([]);
-
     const [topGoalMatches, setTopGoalMatches] = useState([]);
 
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
 
@@ -37,7 +26,10 @@ const useDashboard = () => {
 
             try {
 
-                const results = await Promise.allSettled([
+                setLoading(true);
+                setError(null);
+
+                const responses = await Promise.allSettled([
 
                     API.get("/stats/dashboard"),
 
@@ -68,83 +60,139 @@ const useDashboard = () => {
                 ]);
 
                 const [
-
                     dashboardRes,
-
                     goalsRes,
-
                     resultsRes,
-
                     homeAwayRes,
-
                     topScoringRes,
-
                     winsRes,
-
                     goalDifferenceRes,
-
                     possessionRes,
-
                     teamLossesRes,
-
                     matchesRoundRes,
-
                     attendanceRoundRes,
-
                     topAttendanceRes,
-
                     topGoalMatchesRes
+                ] = responses;
 
-                ] = results.map(r => r.status === "fulfilled" ? r.value : null);
-
-                setDashboard(dashboardRes?.data ?? null);
-
-                setGoalsRound(goalsRes?.data?.data ?? []);
-
-                setResults(resultsRes?.data?.data ?? []);
-
-                setHomeAwayGoals(homeAwayRes?.data?.data ?? []);
-
-                setTopScoring(topScoringRes?.data?.data ?? []);
-
-                setWins(winsRes?.data?.data ?? []);
-
-                setGoalDifference(goalDifferenceRes?.data?.data ?? []);
-
-                setPossession(possessionRes?.data?.data ?? []);
-
-                setTeamLosses(teamLossesRes?.data?.data ?? []);
-
-                setMatchesRound(matchesRoundRes?.data?.data ?? []);
-
-                setAttendanceRound(attendanceRoundRes?.data?.data ?? []);
-
-                setTopAttendance(topAttendanceRes?.data?.data ?? []);
-
-                setTopGoalMatches(topGoalMatchesRes?.data?.data ?? []);
-
-                const failed = results.filter(r => r.status === "rejected");
-
-                if (failed.length) {
-
-                    console.log("Some dashboard requests failed:", failed);
-
+                // Dashboard
+                if (dashboardRes.status === "fulfilled") {
+                    setDashboard(dashboardRes.value.data);
                 }
 
-            }
+                // Goals by round
+                if (goalsRes.status === "fulfilled") {
+                    setGoalsRound(goalsRes.value.data?.data ?? []);
+                }
 
-            catch (err) {
+                // Match results
+                if (resultsRes.status === "fulfilled") {
+                    setResults(resultsRes.value.data?.data ?? []);
+                }
 
-                console.log(err);
+                // Home vs away goals
+                if (homeAwayRes.status === "fulfilled") {
+                    setHomeAwayGoals(
+                        homeAwayRes.value.data?.data ?? []
+                    );
+                }
 
-            }
+                // Top scoring teams
+                if (topScoringRes.status === "fulfilled") {
+                    setTopScoring(
+                        topScoringRes.value.data?.data ?? []
+                    );
+                }
 
-            finally {
+                // Team wins
+                if (winsRes.status === "fulfilled") {
+                    setWins(
+                        winsRes.value.data?.data ?? []
+                    );
+                }
+
+                // Goal difference
+                if (goalDifferenceRes.status === "fulfilled") {
+                    setGoalDifference(
+                        goalDifferenceRes.value.data?.data ?? []
+                    );
+                }
+
+                // Possession
+                if (possessionRes.status === "fulfilled") {
+                    setPossession(
+                        possessionRes.value.data?.data ?? []
+                    );
+                }
+
+                // Team losses
+                if (teamLossesRes.status === "fulfilled") {
+                    setTeamLosses(
+                        teamLossesRes.value.data?.data ?? []
+                    );
+                }
+
+                // Matches by round
+                if (matchesRoundRes.status === "fulfilled") {
+                    setMatchesRound(
+                        matchesRoundRes.value.data?.data ?? []
+                    );
+                }
+
+                // Attendance by round
+                if (attendanceRoundRes.status === "fulfilled") {
+                    setAttendanceRound(
+                        attendanceRoundRes.value.data?.data ?? []
+                    );
+                }
+
+                // Top attendance
+                if (topAttendanceRes.status === "fulfilled") {
+                    setTopAttendance(
+                        topAttendanceRes.value.data?.data ?? []
+                    );
+                }
+
+                // Matches with most goals
+                if (topGoalMatchesRes.status === "fulfilled") {
+                    setTopGoalMatches(
+                        topGoalMatchesRes.value.data?.data ?? []
+                    );
+                }
+
+                // Check failed requests
+                const failedRequests = responses.filter(
+                    (response) => response.status === "rejected"
+                );
+
+                if (failedRequests.length > 0) {
+
+                    console.error(
+                        "Some dashboard API requests failed:",
+                        failedRequests
+                    );
+
+                    setError(
+                        "Some dashboard data could not be loaded."
+                    );
+                }
+
+            } catch (err) {
+
+                console.error(
+                    "Dashboard API error:",
+                    err
+                );
+
+                setError(
+                    "Unable to load dashboard data."
+                );
+
+            } finally {
 
                 setLoading(false);
 
             }
-
         };
 
         fetchData();
@@ -179,7 +227,9 @@ const useDashboard = () => {
 
         topGoalMatches,
 
-        loading
+        loading,
+
+        error
 
     };
 
