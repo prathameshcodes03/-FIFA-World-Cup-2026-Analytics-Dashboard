@@ -12,19 +12,20 @@ const RoundBarChart = ({ title, data, xKey, yKey }) => {
 
     return (
 
-        <div className="bg-white rounded-xl shadow-lg p-5">
+        <section className="min-w-0 overflow-hidden rounded-xl bg-white p-4 text-slate-900 shadow-lg sm:p-5">
 
-            <h2 className="text-xl font-semibold mb-5">
+            <h2 className="mb-4 text-lg font-semibold sm:mb-5 sm:text-xl">
                 {title}
             </h2>
 
-            <ResponsiveContainer width="100%" height={350}>
+            <div className="h-64 sm:h-80 lg:h-[350px]">
+            <ResponsiveContainer width="100%" height="100%">
 
-                <BarChart data={data}>
+                <BarChart data={data} margin={{ top: 8, right: 8, left: -18, bottom: 4 }}>
 
                     <CartesianGrid strokeDasharray="3 3" />
 
-                    <XAxis dataKey={xKey} />
+                    <XAxis dataKey={xKey} tick={{ fontSize: 11 }} interval="preserveStartEnd" />
 
                     <YAxis />
 
@@ -35,8 +36,9 @@ const RoundBarChart = ({ title, data, xKey, yKey }) => {
                 </BarChart>
 
             </ResponsiveContainer>
+            </div>
 
-        </div>
+        </section>
 
     );
 

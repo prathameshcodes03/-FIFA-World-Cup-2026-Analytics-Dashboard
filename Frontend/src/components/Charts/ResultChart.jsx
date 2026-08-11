@@ -19,15 +19,16 @@ const ResultChart = ({ data }) => {
 
     return (
 
-        <div className="bg-white rounded-xl shadow-lg p-5">
+        <section className="min-w-0 overflow-hidden rounded-xl bg-white p-4 text-slate-900 shadow-lg sm:p-5">
 
-            <h2 className="text-xl font-semibold mb-5">
+            <h2 className="mb-4 text-lg font-semibold sm:mb-5 sm:text-xl">
 
                 Match Result Distribution
 
             </h2>
 
-            <ResponsiveContainer width="100%" height={350}>
+            <div className="h-64 sm:h-80 lg:h-[350px]">
+            <ResponsiveContainer width="100%" height="100%">
 
                 <PieChart>
 
@@ -39,9 +40,9 @@ const ResultChart = ({ data }) => {
 
                         nameKey="result"
 
-                        outerRadius={120}
+                        outerRadius="72%"
 
-                        label
+                        label={({ percent }) => `${Math.round(percent * 100)}%`}
 
                     >
 
@@ -63,15 +64,16 @@ const ResultChart = ({ data }) => {
 
                     </Pie>
 
-                    <Legend/>
+                    <Legend wrapperStyle={{ fontSize: 12 }} />
 
                     <Tooltip/>
 
                 </PieChart>
 
             </ResponsiveContainer>
+            </div>
 
-        </div>
+        </section>
 
     );
 

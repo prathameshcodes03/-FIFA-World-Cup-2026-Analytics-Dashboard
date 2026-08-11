@@ -2,6 +2,8 @@ import CountUp from "react-countup";
 
 import { motion } from "framer-motion";
 
+const MotionCard = motion.div;
+
 const KpiCard = ({
 
     title,
@@ -18,19 +20,19 @@ const KpiCard = ({
 
     return (
 
-        <motion.div
+        <MotionCard
 
             whileHover={{ scale: 1.03 }}
 
             transition={{ duration: 0.3 }}
 
-            className="bg-[#171717] rounded-xl p-6 shadow-lg border border-gray-800"
+            className="min-w-0 rounded-xl border border-gray-800 bg-[#171717] p-4 shadow-lg sm:p-6"
 
         >
 
-            <div className="flex justify-between items-center">
+            <div className="flex items-center justify-between gap-3">
 
-                <div>
+                <div className="min-w-0">
 
                     <p className="text-gray-400 text-sm">
 
@@ -38,7 +40,7 @@ const KpiCard = ({
 
                     </p>
 
-                    <h2 className="text-3xl font-bold text-white mt-3">
+                    <h2 className="mt-3 break-words text-2xl font-bold text-white sm:text-3xl">
 
                         <CountUp
 
@@ -72,7 +74,7 @@ const KpiCard = ({
 
             </div>
 
-        </motion.div>
+        </MotionCard>
 
     );
 

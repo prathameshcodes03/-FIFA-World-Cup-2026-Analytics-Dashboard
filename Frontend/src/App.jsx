@@ -4,7 +4,7 @@ const App = () => {
 
     return (
 
-        <div className="bg-[#0d1117] min-h-screen">
+        <div className="min-h-screen overflow-x-hidden bg-[#0d1117] text-white">
 
             <Dashboard />
 

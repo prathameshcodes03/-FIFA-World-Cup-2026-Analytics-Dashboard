@@ -1,7 +1,18 @@
 @import "tailwindcss";
 
+html {
+    background: #0d1117;
+}
 
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+}
 
-::-webkit-scrollbar{
-    display: none;
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+img, svg, canvas {
+    max-width: 100%;
 }

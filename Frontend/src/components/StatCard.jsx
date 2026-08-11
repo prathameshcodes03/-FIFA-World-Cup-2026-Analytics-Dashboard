@@ -4,7 +4,7 @@ const StatCard = ({ title, value }) => {
 
     return (
 
-        <div className="bg-white rounded-xl shadow-lg p-6">
+        <article className="min-w-0 rounded-xl bg-white p-4 text-slate-900 shadow-lg sm:p-6">
 
             <h2 className="text-gray-500">
 
@@ -12,16 +12,16 @@ const StatCard = ({ title, value }) => {
 
             </h2>
 
-            <h1 className="text-4xl font-bold mt-2">
+            <h2 className="mt-2 break-words text-3xl font-bold sm:text-4xl">
 
                 <CountUp
                     end={Number(value)}
                     duration={2}
                 />
 
-            </h1>
+            </h2>
 
-        </div>
+        </article>
 
     );
 

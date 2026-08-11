@@ -22,7 +22,7 @@ const KpiGrid = ({ stats, loading }) => {
 
         return (
 
-            <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 gap-4 min-[481px]:grid-cols-2 sm:gap-5 lg:grid-cols-5">
 
                 {[...Array(5)].map((_, index) => (
 
@@ -38,7 +38,7 @@ const KpiGrid = ({ stats, loading }) => {
 
     return (
 
-        <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-4 min-[481px]:grid-cols-2 sm:gap-5 lg:grid-cols-5">
 
             <KpiCard
 

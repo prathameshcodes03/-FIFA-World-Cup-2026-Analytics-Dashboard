@@ -47,7 +47,7 @@ const Dashboard = () => {
 
         return (
 
-            <h1 className="text-3xl text-center mt-20">
+            <h1 className="mt-20 px-4 text-center text-2xl sm:text-3xl">
 
                 Loading...
 
@@ -63,11 +63,11 @@ const Dashboard = () => {
 
             <Navbar />
 
-            <div className="max-w-7xl mx-auto p-8">
+            <main className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8" aria-label="FIFA World Cup analytics">
 
                 {/* KPI Cards */}
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 gap-4 min-[481px]:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
 
                     <StatCard
                         title="Matches"
@@ -93,7 +93,7 @@ const Dashboard = () => {
 
                 {/* Tournament Analytics */}
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
+                <div className="mt-8 grid grid-cols-1 gap-5 lg:mt-10 lg:grid-cols-2 lg:gap-8">
 
                     <GoalsChart data={goalsRound} />
 
@@ -101,7 +101,7 @@ const Dashboard = () => {
 
                 </div>
 
-                <div className="mt-10">
+                <div className="mt-8 lg:mt-10">
 
                     <HomeAwayChart data={homeAwayGoals} />
 
@@ -109,7 +109,7 @@ const Dashboard = () => {
 
                 {/* Team Analytics */}
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
+                <div className="mt-8 grid grid-cols-1 gap-5 lg:mt-10 lg:grid-cols-2 lg:gap-8">
 
                     <HorizontalBarChart
 
@@ -163,7 +163,7 @@ const Dashboard = () => {
 
                 {/* Match Analytics */}
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
+                <div className="mt-8 grid grid-cols-1 gap-5 lg:mt-10 lg:grid-cols-2 lg:gap-8">
 
                     <HorizontalBarChart
 
@@ -191,7 +191,7 @@ const Dashboard = () => {
 
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
+                <div className="mt-8 grid grid-cols-1 gap-5 lg:mt-10 lg:grid-cols-2 lg:gap-8">
 
                     <RoundBarChart
 
@@ -219,7 +219,7 @@ const Dashboard = () => {
 
                 </div>
 
-                <div className="mt-10">
+                <div className="mt-8 lg:mt-10">
 
                     <HorizontalBarChart
 
@@ -237,7 +237,7 @@ const Dashboard = () => {
 
                 </div>
 
-            </div>
+            </main>
 
         </>
 
