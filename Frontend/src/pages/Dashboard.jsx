@@ -1,11 +1,11 @@
 import Navbar from "../components/Navbar";
 import StatCard from "../components/StatCard";
 
-import GoalsChart from "../components/charts/GoalsChart";
-import ResultChart from "../components/charts/ResultChart";
-import HomeAwayChart from "../components/charts/HomeAwayChart";
-import HorizontalBarChart from "../components/charts/HorizontalBarChart";
-import RoundBarChart from "../components/charts/RoundBarChart";
+import GoalsChart from "../components/Charts/GoalsChart";
+import ResultChart from "../components/Charts/ResultChart";
+import HomeAwayChart from "../components/Charts/HomeAwayChart";
+import HorizontalBarChart from "../components/Charts/HorizontalBarChart";
+import RoundBarChart from "../components/Charts/RoundBarChart";
 
 import useDashboard from "../hooks/useDashboard";
 
